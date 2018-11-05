@@ -85,7 +85,7 @@ int main() {
     
     if(file.good()){
         int i = 0;
-        while(i < 100 ){
+        while(i < 60 ){
             getline(file, piece, ';');
             i++;
             if(isSTATUS(piece)){
@@ -97,6 +97,8 @@ int main() {
             if(isWorkSite(piece)){
                 statePos = i;
 		cout << "statePos is: " << statePos << endl;
+		getline(file, piece, '\n');
+                break;
             }
         }
     }
@@ -114,8 +116,10 @@ int main() {
                  getline(file, piece, ';');
                  i++;
             }
-            if(!piece.empty())
-                occMp[piece]++;
+            if(!piece.empty()){
+                piece.erase(std::remove(piece.begin(), piece.end(), '\"'), piece.end());
+		 occMp[piece]++;
+		}
             
             while(i < statePos){
                 getline(file, piece, ';');
@@ -150,6 +154,7 @@ int main() {
     
     place << "TOP_STATES;NUMBER_CERTIFIED_APPLICATIONS;PERCENTAGE" << endl;
     for(int i = 0; i < findMin(10,pair_vec2.size()); i++){
+	cout << "pair_vec2.size(): " << pair_vec2.size() << endl; 
         place << pair_vec2[i].first << ";" << pair_vec2[i].second << ";"<<std::fixed << std::setprecision(1)<< Round(pair_vec2[i].second * 100.0/cc) << "%" << endl;
     }
     
