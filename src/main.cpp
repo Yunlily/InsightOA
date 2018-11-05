@@ -67,8 +67,8 @@ int main() {
        string F = "H1b_input.csv";
     
     string fileName = F;
-    ifstream file("../input/" + fileName);
-    ofstream occup,place;
+    std::ifstream file("../input/" + fileName);
+    std::ofstream occup,place;
     string piece;
     int certPos = 0;
     int SocPos = 0;
