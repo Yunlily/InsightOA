@@ -36,6 +36,7 @@ After some observation, the data has following features:
 # Analyze
 
 The total complexity of reading information from h1b_statistics.csv is **O(n)**.
+
 the complexity of sorting two maps takes **O(10log10)**.
 
 # Possible bugs:
