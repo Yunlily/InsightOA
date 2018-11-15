@@ -46,7 +46,11 @@ the complexity of sorting two maps takes **O(10log10)**.
 # To run the code
 
 1 git clone https://github.com/Yunlily/InsightOA.git 
+
 2 cd InsightOA/
+
 3 run ./run.sh  
+
 4 cd output/
+
 5 read top_10_occupations.txt and top_10_states.txt respectively.
